@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.css" />
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <link rel="stylesheet" href="../libs/commonjs/commom.css" />
+	    <link rel="stylesheet" href="../libs/css/tab.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css"/>
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <script type="text/javascript" src="../libs/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/common.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	    <script type="text/javascript" src="../libs/js/tab.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/global.js" ></script>
+	</head>
+	<body ng-app="myApp" ng-controller="myctr" id="huo">
+		<div class="header cow ">
+			<div class="col-md-12">
+				<span class="col-md-2 lgin" ><a href="javascript:" style="color: #fff;text-decoration:none;" ng-bind="account">请先登录！</a></span>
+				<span class="col -md-10">乐满地商城-后台管理系统</span>
+			</div>
+		</div>
+		<div class="cow huonav" >
+			<a href="tab.html" class="col-md-3">首页</a>
+			<a href="tab.html" class="col-md-3">库存管理</a>
+			<a href="tab.html" class="col-md-3">结算管理</a>
+			<a href="tab.html" class="col-md-3" style="border-right:none ;">产品管理</a>
+		</div>
+		<div class="content cow">
+			<div class="col-md-2 left">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="accordion" id="accordion-814774">
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-1">超级管理者<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<!--in collapse-->
+								<div id="accordion-element-1" class="accordion-body  collapse">
+									<div class="accordion-inner"style="color: #fff;">
+										<a href="javaSrcipt:" ng-click="rest_user()">修该基本信息</a></li>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+										<a href="javaSrcipt:" ng-click="logout()">切换用户</a></li>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-2">用户管理<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<div id="accordion-element-2" class="accordion-body collapse">
+									<div class="accordion-inner"style="color: #fff;">
+										<a href="javaSrcipt:" ng-click="rest_members()">用户列表</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+										<a href="javaSrcipt:" ng-click="usercart()">用户购物车</a>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-3">订单管理<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<div id="accordion-element-3" class="accordion-body collapse">
+									<div class="accordion-inner"style="color: #fff;">
+									   <a href="javaSrcipt:" ng-click="order()">用户订单</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									   <a href="javaSrcipt:" ng-click="completeorder()">完成订单</a>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-4">库存管理<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<div id="accordion-element-4" class="accordion-body collapse">
+									<div class="accordion-inner"style="color: #fff;">
+									  <a href="javaSrcipt:" ng-click="products()">商品列表</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									  <a href="javaSrcipt:" ng-click="products()">商品列表</a>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-5">结算管理<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<div id="accordion-element-5" class="accordion-body collapse">
+									<div class="accordion-inner"style="color: #fff;">
+									   <a href="javaSrcipt:" ng-click="completeorder()">完成订单</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									   <a href="javaSrcipt:" ng-click="completeorder()">完成订单</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									   <a href="javaSrcipt:" ng-click="completeorder()">完成订单</a>
+									</div>
+								</div>
+							</div>
+							<div class="accordion-group">
+								<div class="accordion-heading">
+									 <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-814774" href="#accordion-element-6">产品管理<i class="fa fa-chevron-up"></i></a>
+								</div>
+								<div id="accordion-element-6" class="accordion-body collapse">
+									<div class="accordion-inner"style="color: #fff;">
+									  <a href="javaSrcipt:" ng-click="products()">商品列表</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									  <a href="javaSrcipt:" ng-click="products()">商品列表</a>
+									</div>
+									<div class="accordion-inner"style="color: #fff;">
+									  <a href="javaSrcipt:" ng-click="products()">商品列表</a>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+				<!--<ul class="col-md-12">
+					<li class="col-md-12"><a href="houlogin.html">登录</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="rest_user()">修改管理者信息</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="rest_members()">用户列表</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="products()">商品列表</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="usercart()">用户购物车</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="order()">用户订单</a></li>
+					<li class="col-md-12"><a href="javaSrcipt:" ng-click="logout()">退出登录</a></li>
+				</ul>-->
+			</div>
+			<div class="col-md-10 user">
+                   
+			</div>
+		</div>
+		<div class="footer cow ">
+			<div class="col-md-12">本系统由jaume提供技术支持</div>
+		</div>
+		<script type="text/javascript">
+		   
+			var myApp=angular.module("myApp",["commonApp"]);
+			    myApp.config(function($controllerProvider){
+			    myApp.register = {
+				controller: $controllerProvider.register
+			   }
+		       });
+			    myApp.controller("myctr",["$scope","$http","$compile",function($scope,$http,$compile){
+			    	//判断是否处于登录状态
+//			    	$http.get("../libs/php/getsession.php").success(function(_reponse){
+//			    		if(!_reponse.state){
+//			    		   window.location.href="houlogin.html";
+//			    		}else{
+//			    			$scope.account="欢迎"+_reponse.account+"进入管理系统";
+//			    			
+//			    		}
+//			    	}) ;
+                      tab();
+			    	//退出登录
+			    	$scope.logout=function(){
+				    	  $http.get(common.baseUrl+"huologout.php").success(function(_reponse){
+				    		window.location.href="houlogin.html";
+				    	  })	
+			    	};
+			    	//背景
+			    	$scope.backpop=function(){
+			    		$http.get('huobackdrop.html').success(function(_response){
+						$compile($('.user').html(_response))($scope);
+					    })
+			    	};
+			    	$scope.backpop();
+			    	//页面切换 rest_user
+			    	$scope.rest_user = function(){
+					    $http.get('huousers.html').success(function(_response){
+						$compile($('.user').html(_response))($scope);
+					    })
+			       };
+			       $scope.rest_members = function(){
+					    $http.get('huomembers.html').success(function(_response){
+						$compile($('.user').html(_response))($scope);
+					    })
+			       };
+			       $scope.products=function(){
+			       	     $http.get("huoproductslist.html").success(function(_response){
+						 $compile($('.user').html(_response))($scope);
+					    })
+			       }
+			       $scope.usercart=function(){
+			       	     $http.get("huocart.html").success(function(_response){
+						 $compile($('.user').html(_response))($scope);
+					     })
+			       }
+			       $scope.order=function(){
+			       	     $http.get("huo_order.html").success(function(_response){
+						 $compile($('.user').html(_response))($scope);
+					     })
+			       }
+			       $scope.completeorder=function(){
+			       	     $http.get("huo_completeorder.html").success(function(_response){
+						 $compile($('.user').html(_response))($scope);
+					     })
+			       }
+			    	
+			    }])
+		</script>
+	</body>
+</html>

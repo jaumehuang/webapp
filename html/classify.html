@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+		<title>商品分类</title>
+	    <link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+	    <link rel="stylesheet" href="../libs/css/index.min.css" />
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <link rel="stylesheet" href="../libs/css/classify.css" />
+	    <link rel="stylesheet" href="../libs/css/common.css" />
+	 <!--  <script type="text/javascript" src="../libs/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>-->
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <script type="text/javascript" src="../libs/js/right_nav.js" ></script>
+	    <script type="text/javascript" src="../libs/js/footer.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/common.js" ></script>
+	    <script type="text/javascript" src="../libs/vue/vue.js"></script>
+	    <script type="text/javascript" src="../libs/js/classify.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="search-bar">
+				<a href="javascript:history.go(-1)" class="fa fa-angle-left home"></a>
+				<div>商品分类</div>
+				<a href="#" class="fa fa-list-ul "></a>
+			</div>
+		</div>
+		<div class="category_right">
+			<em></em>
+			<div class="shape"></div>
+			<ul class="list-group">
+			    <li class="list-group-item "><a href="../index.html">首页</a></li>
+			    <li class="list-group-item"><a href="../index.html">分类查询</a></li>
+			    <li class="list-group-item"><a href="shopcart.html"> 购物车</a> </li>
+			    <li class="list-group-item"><a href="Members.html">会员中心</a></li>
+           </ul>
+		</div>
+		<div class="content cow container" id="demo_nav">
+			 <div class="classify_left col-xs-4">
+			 	 <ul class="col-xs-12 nav">
+			 	 	  <li class="col-xs-12 first_li" @click="subimt_Nav" php="1" style="color:red;background:#F1F5F6;">推荐分类</li>
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="2">潮流女装</li>
+			 	 	  
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="3">品牌男装</li>
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="4">护肤化妆</li>
+			 	 	  
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="5">家用电器</li>
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="6">推荐分类</li>
+			 	 	  
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="7">潮流女装</li>
+			 	 	  
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="8">品牌男装</li>
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="9">护肤化妆</li>
+			 	 	  
+			 	 	  <li class="col-xs-12" @click="subimt_Nav" php="10">家用电器</li>
+			 	 	  
+			 	 	  
+			 	 </ul>
+			 </div>
+			 <div class="classify_right col-xs-8">
+			 	  <div class="col-xs-12 goodlist" >
+			 	  	   <div class="col-xs-12" style="padding: 0;text-align: left;margin:12px 0 ;">热门品牌</div>
+			 	  	   <div class="col-xs-12 goodshow" >
+			 	  	   	    <a  href="products.html"class="col-xs-4" v-for="n in classify" >
+			 	  	   	      <img :src="n.img" />
+			 	  	   	    	<div v-text="n.name" class="list_text"></div>
+			 	  	   	    </a>
+			 	  	   	    
+			 	  	   </div>
+			 	  </div>
+			 	  <div class="col-xs-12 goodlist" >
+			 	  	   <div class="col-xs-12 hot" style="padding: 0;text-align: left;margin-top:30px;"">热门品牌</div>
+			 	  	   <div class="col-xs-12 goodshow" >
+			 	  	   	    <a  href="products.html"class="col-xs-4" v-for="n in classify" >
+			 	  	   	      <img :src="n.img" />
+			 	  	   	    	<div v-text="n.name" class="list_text"></div>
+			 	  	   	    </a>	
+			 	  	   </div>
+			 	  </div>
+			 </div>
+			 
+		</div>
+	    
+		<!--layout_footer-->
+		<div class="layout_footer">
+			<a ng-repeat="m in navList" href="../index.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-home"></i>
+				<span ng-bind="m.name" class="ng-binding">首页</span>
+			</a>
+			<a ng-repeat="m in navList" href="../index.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-database"></i>
+				<span ng-bind="m.name" class="ng-binding">积分区</span>
+			</a>
+			<a ng-repeat="m in navList" href="classify.html" class="nav-btn active" style="width:20%;color:#EE0000 ;">
+				<i class="fa fa-cube"></i>
+				<span ng-bind="m.name" class="ng-binding">分类</span>
+			</a>
+			<a ng-repeat="m in navList" href="shopcart.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-cart-plus"></i>
+				<span ng-bind="m.name" class="ng-binding">购物车</span>
+			</a>
+			<a ng-repeat="m in navList" href="Members.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-user"></i>
+				<span ng-bind="m.name" class="ng-binding">个人中心</span>
+			</a>
+		</div>
+		<div class="loadshow_login loadshow_order">
+			   <i class="fa fa-spinner fa-pulse"></i>
+		 </div>
+	</body>
+</html>

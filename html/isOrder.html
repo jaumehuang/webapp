@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+		<title>确认订单</title>
+	    <link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+	    <link rel="stylesheet" href="../libs/css/index.min.css" />
+	    <link rel="styleshee" href="../libs/css/common.css"/>    
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <link rel="stylesheet" href="../libs/css/isorder.css" />
+	  <!--  <script type="text/javascript" src="../libs/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>-->
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <script type="text/javascript" src="../libs/vue/vue.js"></script>
+	    <script type="text/javascript" src="../libs/js/right_nav.js" ></script>
+	    <script type="text/javascript" src="../libs/js/footer.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/common.js" ></script>
+	    <script type="text/javascript" src="../libs/js/getTime.js"></script>
+	    <script type="text/javascript" src="../libs/js/hometop.js" ></script>
+	</head>
+	<body>
+		<div class="header" id="header">
+			<div class="search-bar">
+				<a href="javascript:history.go(-1)" class="fa fa-angle-left home"></a>
+				<div>确认订单</div>
+				<a href="#" class="fa fa-list-ul "></a>
+			</div>
+		</div>
+		<div class="category_right">
+			<em></em>
+			<div class="shape"></div>
+			<ul class="list-group">
+			    <li class="list-group-item "><a href="../index.html">首页</a></li>
+			    <li class="list-group-item"><a href="../index.html">分类查询</a></li>
+			    <li class="list-group-item"><a href="shopcart.html"> 购物车</a> </li>
+			    <li class="list-group-item"><a href="Members.html">会员中心</a></li>
+           </ul>
+		</div>
+		<div class="content cow container" id="content" >
+			  <div class="col-xs-12 top">
+			  	 <div class="col-xs-12 top_1">
+			  	 	<div class="col-xs-1 top_1_1">
+			  	 		<i class=" fa fa-location-arrow location"></i>
+			  	 	</div>
+			  	 	<a  href="add_address.html"class="col-xs-9 top_1_2" style="color: #000;text-decoration:none ;">
+			  	 		
+			  	 		<div class="col-xs-12 account"><span>张三</span><span>13511111111</span>
+			  	 		</div>
+			  	 		<div class="col-xs-12 address">广东省广州市天河区天河路99999号天河大楼11111楼4114</div>
+			  	 	</a>
+			  	 	<div class="col-xs-1 top_1_3">
+			  	 		 <i class="location fa fa-chevron-right"></i>
+			  	 	</div>
+			  	 </div>
+			  </div>
+			  <a href="add_address.html" class="col-xs-12 add_address" style="color: #000;text-decoration:none ;">
+			  	   <i class="fa fa-plus-square"></i>
+			  	        添加收货地址
+			  </a>
+			  <div class="col-xs-12 bottom" v-for="n in Array">
+			  	    <div class="col-xs-12 storeName">
+			  	    	<a href="javascript:" class="store">店铺<span v-text="n.store">1</span></a>
+			  	    </div>
+			  	    <div class="col-xs-12 showimg">
+			  	    	<div class="col-xs-3 img">
+			  	    		<a href="javascript:" class="col-xs-12"><img :src="n.img" /></a>
+			  	    	</div>
+			  	    	<div class="col-xs-7 content_title">
+			  	    		<span class="col-xs-12" v-text="n.title">斯文印花黑灰色短袖连衣裙</span>
+			  	    		<span class="col-xs-12">￥<span v-text="n.price"></span>
+			  	    	</div>
+			  	    	<div class="col-xs-1 num">
+			  	    		<div class="xnum">
+			  	    			<span>X</span><span class="number" v-text="n.numbers">2</span>
+			  	    		</div>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="col-xs-12 express">
+			  	    	<div class="col-xs-3">配送方式</div>
+			  	    	<div class="col-xs-9 send" >
+			  	    		  <span @click="express">快递免邮</span>
+			  	    		  <ul class="select">
+			  	    		  	<li>顺丰快递</li>
+			  	    		  	<li>邮政快递</li>
+			  	    		  </ul>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="col-xs-12 invoice">
+			  	    	<div class="col-xs-3 invoice_title">
+			  	    		发票抬头
+			  	    	</div>
+			  	    	<div class="col-xs-9 invoice">
+			  	    		<input class="col-xs-12" placeholder="请输入发票抬头，如：个人"/>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="col-xs-12 invoice">
+			  	    	<div class="col-xs-3 invoice_title ">
+			  	    		买家留言
+			  	    	</div>
+			  	    	<div class="col-xs-9 buyer_words">
+			  	    		<input class="col-xs-12 " placeholder="选填"/>
+			  	    	</div>
+			  	    </div>
+			  	    <div class="col-xs-12 total">
+			  	    	<!-- 共4件商品，合计：￥ 480.00-->
+			  	    	共<span v-text="n.numbers">2</span>件商品，合计：<span class="active">￥<span v-text="n.numbers*n.price"></span>.00</span>
+			  	    </div>
+			  </div>
+			  <div class="col-xs-12 order">
+			  	  <div class="col-xs-4 integral">
+			  	  	使用积分
+			  	  </div>
+			  	  <div class="col-xs-8">
+			  	  	 <input type="checkbox"/>
+			  	  </div>
+			  </div>
+			  <div class="col-xs-12 getbuy" >
+			  	   <div class="col-xs-4">
+			  	  	支付方式
+			  	  </div>
+			  	  <div class="col-xs-8 pay" @click="pay" v-text="payment">
+			  	  	  微信支付<i class="fa fa-angle-right"></i>
+			  	  </div>
+			  </div>
+		</div>
+	    <div class="cover cow container">
+	    	<div class="col-xs-12 changebuy">
+			 	<div class="col-xs-12" @click="only">余额支付</div>
+			 	<div class="col-xs-12" @click="weixin">微信支付</div>
+			 </div>
+	    </div>
+	    <div class="cover2" v-show="cover2">
+	    </div>
+	    <div class="scroll_top" id="top">
+			<i class=" fa fa-arrow-up"></i>
+		</div>
+		<!--layout_footer-->
+		<div class="layout_footer cow container getorder" id="order">
+			 <div class="col-xs-7">
+			 	  共计<span>5</span>件，总金额:<span class="total">￥<span>1111</span></span>
+			 </div>
+			 <div class="col-xs-5" @click="SubmitOrder">
+			 	 <span class="col-xs-12">提交订单</span>
+			 </div>
+		</div>
+		<div class="loadshow_login loadshow_order">
+			   <i class="fa fa-spinner fa-pulse"></i>
+		 </div>
+    <script type="text/javascript" src="../libs/js/isorder.js"></script>
+	</body>
+</html>

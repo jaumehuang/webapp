@@ -1,0 +1,133 @@
+<div class="container-fluid" ng-controller="shopcarts">
+	<div class="search ">
+		<select ng-model="colname" ng-change="filterChange()" value="{{colname}}" >
+			<option ng-repeat="(key,value) in languages" ng-bind="value" value="{{value}}"></option>
+	    </select>
+	   <input type="text" ng-model="keyWord" ng-change="filterChange()"  placeholder="请输入关键字符"  />
+	   
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+		  <div class="huolist">	
+		 <table class="table table-bordered table-hover carts" >
+		  	  <caption>用户购物车汇表</caption>
+		      <thead>
+		      	<tr>
+	      	     <th >序号</th>
+	      	     <th  ng-repeat="(columnName, columnValue) in languages" ng-bind="columnValue"></th>
+	      	  </tr>
+		      </thead>
+		      <tbody>
+		      	<tr ng-repeat="n in carts|filter:myselt|limitTo : pagerows : (pageindex - 1) * pagerows" class="success">
+		      		<td ng-bind="$index + 1"></td>
+		      		<td ng-repeat="i in n " ng-bind="i"></td>
+	      	    </tr>
+		      </tbody>
+		      <tfoot>
+			       <tr>
+	        	   	    <!--<td ></td>-->
+						<td colspan="{{colspan + 2}}">
+							<ul class="pagination">
+								<li ng-click="prev()"><a href="#">&laquo;</a></li>
+								<li ng-repeat="p in [] | range: pagecount" class="{{p == pageindex ? 'active' : ''}}" ng-click="page(p)"><a href="#" ng-bind="p" ></a></li>
+								<li ng-click="next()"><a href="#">&raquo;</a></li>
+                           </ul>
+						</td>
+						
+					</tr>
+			    </tfoot>	
+		       <script type="text/javascript">
+			          var name=null;
+			          var flag;
+				 	  myApp.register.controller("shopcarts",["$scope","$http",function($scope,$http){
+						  $http.post("../libs/php/shopcart.php").success(function(_reponse){
+						  	   $scope.carts=_reponse;
+						  	   $scope.colspan = 0;
+						            for (var key in $scope.carts[0]){
+						                $scope.colspan += 1;
+						            }
+						            //每页显示 5 行,判断是否需要翻页
+								        $scope.pagerows = 5;//每页显示行数
+								        $scope.pageindex = 1;
+								        $scope.pagecount = Math.ceil($scope.carts.length / $scope.pagerows);	      
+						            //翻页
+						            $scope.page = function(_index) {
+									     $scope.pageindex = _index;
+									}
+						             var i=$scope.pageindex;
+						            console.log($scope.pageindex);
+						            $scope.prev = function() {
+						            	 i=$scope.pageindex;
+						            	 i=i-1;
+						            	 if(i<=0){
+						            	 	i=1;
+						            	 }
+									     $scope.pageindex = i;
+									}
+						            $scope.next = function() {
+						            	 i++;
+						            	 if(i>=$scope.pagecount){
+						            	 	i=$scope.pagecount;
+						            	 }
+									     $scope.pageindex = i;
+									}
+						            //获取字典数据   
+						            var _array=[];//保存中文字段
+						            var _array2=[];//保存numbers的下标
+						            var _souname=null;//搜索字段
+						            $http.get("usercart.txt").success(function (response) {
+						            	  $scope.languages=response;
+						            	   //中英文切换
+									         for(var i in $scope.languages){
+						            	  	    _array.push($scope.languages[i].cn);
+						            	    }
+									         for(var i in $scope.carts[0]){
+									         	  _array2.push(i);
+									         }
+									          $scope.languages=_array;  
+						           });
+                                   $scope.datasource = $scope.carts;
+								    $scope.updata = function (selectInput) {
+								        $scope.datasource = [];
+								        if (!$scope.keyWord.length > 0) {
+								            $scope.datasource = $scope.carts;
+								        };
+								    };
+                                   //过滤搜索
+								     $scope.myselt = function (Number, index, carts){
+                                        if($scope.keyWord!=undefined){
+											if(JSON.stringify(Number[_souname]).indexOf($scope.keyWord) > -1) {
+												return Number;
+											}
+										}else {
+											return Number;
+										}
+						            }
+                                   //搜索的页数
+                                   $scope.filterChange = function (Number) {
+                                       var _total = 0;
+                                      
+                                       for(var i in _array){
+                                       	    if(_array[i]==$scope.colname){
+                                       	    	_souname=_array2[i];
+                                       	    };
+                                       }
+                                        if(_souname){
+                                        	for(var i = 0; i < $scope.carts.length; i++) {
+											if(JSON.stringify($scope.carts[i][_souname]).indexOf($scope.keyWord) > -1) {
+												_total++;
+											 }
+										  }
+                                            $scope.pagecount = Math.ceil(_total /$scope.pagerows);	
+                                        }
+									    return Number;
+                                   }
+						  });
+					  }]);
+							
+				</script>
+		  </table>
+		</div>
+    </div>
+  </div>
+</div>  

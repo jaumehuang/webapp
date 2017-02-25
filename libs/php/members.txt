@@ -1,0 +1,12 @@
+﻿{
+	"index": {"cn": "用户ID", "en": "index"},
+	"account": {"cn": "帐号", "en": "Account"},
+	"sex":{"cn":"性别","en":"Sex"},
+	"age":{"cn":"年龄","en":"Age"},
+	"number":{"cn":"会员","en":"Member"},
+	"password": {"cn": "密码", "en": "Pass Word"},
+	"phone": {"cn": "手机", "en": "Phone"},
+	"mail": {"cn": "邮箱", "en": "E-Mail"},
+	"address": {"cn": "地址", "en": "Address"}
+	
+}

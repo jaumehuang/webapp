@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+		<title>地址编辑</title>
+	    <link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+	    <link rel="stylesheet" href="../libs/css/index.min.css" />
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <link rel="stylesheet" href="../libs/css/address_edit.css" />
+	  <!--  <script type="text/javascript" src="../libs/bootstrap-3.3.7-dist/js/bootstrap.js" ></script>-->
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <script type="text/javascript" src="../libs/js/right_nav.js" ></script>
+	    <script type="text/javascript" src="../libs/js/footer.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/common.js" ></script>
+	    <script type="text/javascript" src="../libs/js/address_edit.js" ></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="search-bar">
+				<a href="javascript:history.go(-1)" class="fa fa-angle-left home"></a>
+				<div>地址编辑</div>
+				<a href="#" class="fa fa-list-ul "></a>
+			</div>
+		</div>
+		<div class="category_right">
+			<em></em>
+			<div class="shape"></div>
+			<ul class="list-group">
+			    <li class="list-group-item "><a href="../index.html">首页</a></li>
+			    <li class="list-group-item"><a href="../index.html">分类查询</a></li>
+			    <li class="list-group-item"><a href="shopcart.html"> 购物车</a> </li>
+			    <li class="list-group-item"><a href="Members.html">会员中心</a></li>
+           </ul>
+		</div>
+		<div class="content cow container" ng-app="myApp" ng-controller="mycty" >
+			  <form class="col-xs-12 form">
+			  	   <div class="col-xs-12 name">
+			  	   	   <span class="col-xs-3">姓名</span><input class="col-xs-9  date-range required" type="text" />
+			  	   </div>
+			  	   <div class="col-xs-12 name">
+			  	   	   <span class="col-xs-3">手机号码</span><input class="col-xs-9" type="text" />
+			  	   </div>
+			  	   <div class="col-xs-12 address">
+			  	   	   <div class="col-xs-3">收货地址</div>
+			  	   	   <div class="col-xs-9 select">
+			  	   	   	    <div class="col-xs-12">
+			  	   	   	    	<select class="col-xs-12">
+			  	   	   	    		 <option>选择省</option>
+			  	   	   	    		 <option>广东省</option>
+			  	   	   	    		 <option>广东省</option>
+			  	   	   	    		 <option>广东省</option>
+			  	   	   	    	</select>
+			  	   	   	    </div>
+			  	   	   	    <div class="col-xs-12">
+			  	   	   	    	<select class="col-xs-12">
+			  	   	   	    		 <option>选择市</option>
+			  	   	   	    		 <option>广州市</option>
+			  	   	   	    		 <option>广州市</option>
+			  	   	   	    		 <option>广州市</option>
+			  	   	   	    	</select>
+			  	   	   	    </div>
+			  	   	   	    <div class="col-xs-12">
+			  	   	   	    	<select class="col-xs-12">
+			  	   	   	    		 <option>选择区/县</option>
+			  	   	   	    		 <option>天河区</option>
+			  	   	   	    		 <option>天河区</option>
+			  	   	   	    		 <option>天河区</option>
+			  	   	   	    	</select>
+			  	   	   	    </div>
+			  	   	   	    <div class="col-xs-12">
+			  	   	   	    	<textarea class="col-xs-12" placeholder="说明地址"></textarea>
+			  	   	   	    </div>
+			  	   	   </div>
+			  	   </div>
+			  	   <div class="col-xs-12 name">
+			  	   	   <span class="col-xs-3">邮政编码</span><input class="col-xs-9" type="text" />
+			  	   </div>
+			  	   <div class="col-xs-12 initname">
+			  	   	  <span class="col-xs-3">默认地址</span><input class="col-xs-8" type="checkbox" />
+			  	   </div>
+			  	   <div class="col-xs-12 btnaddrees">
+			  	   	     <span class="col-xs-12">提交</span>
+			  	   </div>
+			  </form>
+		</div>
+		<!--layout_footer-->
+		<div class="layout_footer">
+			<a ng-repeat="m in navList" href="../index.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-home"></i>
+				<span ng-bind="m.name" class="ng-binding">首页</span>
+			</a>
+			<a ng-repeat="m in navList" href="../index.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-database"></i>
+				<span ng-bind="m.name" class="ng-binding"> 积分区</span>
+			</a>
+			<a ng-repeat="m in navList" href="classify.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-cube"></i>
+				<span ng-bind="m.name" class="ng-binding"> 分类</span>
+			</a>
+			<a ng-repeat="m in navList" href="shopcart.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-cart-plus"></i>
+				<span ng-bind="m.name" class="ng-binding"> 购物车</span>
+			</a>
+			<a ng-repeat="m in navList" href="Members.html" class="nav-btn active" style="width:20%;color: #ABABAB;">
+				<i class="fa fa-user"></i>
+				<span ng-bind="m.name" class="ng-binding">个人中心</span>
+			</a>
+		</div>
+		<div class="loadshow_login loadshow_order">
+			   <i class="fa fa-spinner fa-pulse"></i>
+		 </div>
+	</body>
+</html>

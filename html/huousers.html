@@ -1,0 +1,38 @@
+<form class="newxi" ng-controller="user">
+	<div class="col-md-12">
+		<span class="col-md-3">需要修改的账号：</span><input type="text" placeholder="请输入账号" class="col-md-4"ng-model="account"/>
+	</div>
+	<div class="col-md-12">
+		<span class="col-md-3">昵称：</span><input type="text" placeholder="请输入新的昵称" class="col-md-4" ng-model="name"/>
+	</div>
+	<div class="col-md-12">
+		<span class="col-md-3">旧密码：</span><input type="password" placeholder="请输入旧密码" class="col-md-4" ng-model="oldpassword"/>
+	</div>
+	<div class="col-md-12">
+		<span class="col-md-3">新密码：</span><input type="password" placeholder="请输入新密码" class="col-md-4" ng-model="password"/>
+	</div>
+	<div class="col-md-12">
+		<span class="col-md-3">E-mail：</span><input type="text" placeholder="请输入邮箱" class="col-md-4" ng-model="mail"/>
+	</div>
+	<div class="col-md-12">
+		<span class="col-md-3">phone：</span><input type="text" placeholder="请输入手机号码" class="col-md-4" ng-model="phone"/>
+	</div>
+	<div class="col-md-10 btnsave" ng-click="usersave()">
+		<input type="button" value="保存" />
+	</div>
+	<script type="text/javascript">
+		myApp.register.controller("user",["$scope","$http",function($scope,$http){
+			$scope.usersave=function(){
+			  $http.post("../libs/php/rest_user.php",{account:$scope.account,oldpassword:$scope.oldpassword,password:$scope.password,name:$scope.name,mail:$scope.mail,phone:$scope.phone}).success(function(_reponse){
+			  	 if(!_reponse.state){
+			  	 	$.alert("信息修改失败");
+			  	 }else{
+			  	 	if($.alert("信息修改成功")){
+			  	 		window.location.assign("tab.html")
+			  	 	}
+			  	 }
+			  });
+			}
+		}])
+	</script>
+</form>

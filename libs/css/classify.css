@@ -1,0 +1,70 @@
+.content{
+	position: absolute;
+	right: 0;
+	left:0;
+	top:48px;
+	bottom:48px;
+	padding: 0 2px;
+	background:#F1F5F6;
+	overflow-y:auto;
+}
+.content .classify_left{
+	padding: 0;
+	text-align: center;
+	position: fixed;
+	top:48px;
+},
+.content .classify_right{
+	 padding: 0 5px 0 0 ;
+}
+.content .classify_left .nav{
+	padding:0 8px 0 0;
+}
+.content .classify_left .nav .first_li{
+	color:red;
+	background:#F1F5F6;
+}
+.content .classify_left .nav li{
+	 height:40px;
+	 line-height: 40px;
+	 padding:0;
+	 margin-bottom:1px ;
+	 background: #fff;
+	 
+}
+.classify_right{
+	
+	position: absolute;
+	right: 0px;
+	top:0;
+	left:120px;
+	bottom: 0px;
+	overflow-y:auto;
+	padding: 0 2px;
+	
+}
+.classify_right .goodlist .hot{
+	padding: 0;
+	text-align: left;
+}
+.goodlist{
+	padding: 0;
+	height:300px;
+}
+
+.content .goodshow{
+	padding: 0;
+}
+.content .goodshow a{
+	padding: 0;
+}
+.content .goodshow a .list_text{
+	color: #000;
+	background:#fff;
+}
+.active{
+	color: red;
+}
+.text-danger{
+	color: #000;
+}

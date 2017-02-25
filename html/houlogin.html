@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>后台登录系统</title>
+		<link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.css" />
+	    <link rel="stylesheet" href="../libs/css/houlogin.css" />
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <link rel="stylesheet" href="../libs/commonjs/commom.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/common.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	</head>
+	<body>
+		
+		<div class="content cow content">
+			<div class="head col-md-12">欢迎登录乐满地商城后台管理系统</div>
+			<form ng-app="myApp" ng-controller="myctr">
+		    <div class="user col-md-12">
+		    	<span class="col-md-2"><i class="fa fa-user"></i></span><input type="text" placeholder="请输入账号" ng-model="account" class="user col-md-9"/><br />
+		    </div>
+			<div class="password col-md-12" >
+				<span class="col-md-2"><i class="fa fa-lock"></i></span><input type="password" placeholder="请输入密码" ng-model="password" class="user col-md-9"/>
+			</div>
+			<div class="col-md-12 btnlogin">
+				<span class="btnlogo col-md-10" ng-click="submit()">登录</span>
+			</div>
+		   </form>
+		</div>
+		<script type="text/javascript">
+			var myApp=angular.module("myApp",["commonApp"]);
+			    myApp.controller("myctr",["$scope","$http",function($scope,$http){
+			    	$scope.submit=function(){
+			    		$http.post("../libs/php/huologin.php",{account:$scope.account,password:$scope.password}).success(function(_reponse){
+			    			 if(_reponse.state){
+			    			 	window.location.href="tab.html";
+			    			 }else{
+			    			   alert(_reponse.massage);
+			    			 }
+			    		})
+			    	}
+			    }])
+		</script>
+	</body>
+</html>

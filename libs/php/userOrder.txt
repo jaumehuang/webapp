@@ -1,0 +1,10 @@
+﻿{
+	"index": {"cn": "商品ID", "en": "index"},
+	"id": {"cn": "商品编号", "en": "ID"},
+	"store":{"cn":"店铺","en":"store"},
+	"img":{"cn":"商品图片","en":"img"},
+	"title": {"cn": "商品主题", "en": "title"},
+	"price": {"cn": "商品价格", "en": "price"},
+	"numbers":{"cn":"商品数量","en":"Numbers"},
+	"time":{"cn":"订单时间","en":"price"}
+}

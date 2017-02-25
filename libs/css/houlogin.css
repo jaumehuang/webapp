@@ -1,0 +1,79 @@
+body{
+	background:url(../img/huologin.jpg);
+}
+.content{
+	position:absolute;
+	transform: translate(-50%,-50%);
+	left:50%;
+	top:50%;
+	height:330px;
+	background:url(../img/huolg5.jpg) center;
+	width:350px;
+	border-radius:6px;
+	text-align: center;
+	color: #fff;
+	
+}
+.head{
+	margin-top:68px ;
+	padding:5px 0;
+	height: 40px;
+	line-height: 34px;
+	text-align: center;
+	font-size: 20px;
+	color:#6c6ce6;
+	font-family: "微软雅黑";
+	font-weight: bolder;
+}
+.user,.password{
+	opacity: 0.8;
+	padding:4px 0;
+	/*border:1px solid #DBDBDB ;*/
+}
+.password>input,.user>input{
+	height:40px;
+	padding: 0;
+	border:none;
+	border:1px solid #D4D4D4;
+    border-radius:6px;
+	outline: none;
+}
+.password>span,.user>span{
+	height:40px;
+	padding: 0;
+	padding: 5px 0;
+	font-size:26px;
+	/*border-right:1px solid #DBDBDB;*/
+}
+.content input{
+	color: darkred;
+}
+/*.btnlogo{
+	height:30px;
+	width:120px;
+	background:indianred;
+	margin-top:10px;
+	color:#fff;
+	outline: none;
+	border-radius: 4px;
+	font-weight: bolder;
+}*/
+.btnlogin{
+	height:40px;
+	cursor: pointer;
+	
+}
+.btnlogin>span{
+	height:40px;
+	padding: 0;
+	margin-left:13%;
+	background: #8e3160;
+	line-height: 40px;
+	font-size:26px;
+	font-family: "微软雅黑";
+	color: #e6e6ea;
+	margin-top:10px;
+	border-radius:6px;
+	opacity: 0.8;
+	
+}

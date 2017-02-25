@@ -1,0 +1,258 @@
+ul li{
+	list-style: none;
+}
+.header{
+	height:50px;
+	background:#19A97B;
+	font-size:20px;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	width: 100%;
+}
+.header .col-md-12>.lgin{
+  padding: 0;
+}
+.header .col-md-12 #btngo{
+	text-decoration: none;
+	color: #fff;
+}
+ body .huonav{
+	height:40px;
+	background:#EEEEEE;
+	width:100%;
+	height:40px;
+	background:#EEEEEE;
+	text-align: center;
+	line-height: 40px;
+	
+}
+ body .huonav a{
+ 	display: block;
+ 	border-right:1px solid #9D9D9D ;
+ 	color: #000;
+ }
+.content{
+/*	margin-top:10px ;*/
+/*	height:800px;*/
+	border:1px solid #000;
+	border-top:none;
+	position: fixed;
+	right:0;
+	top:90px;
+	left:0;
+	bottom: 50px;
+	
+}
+.content .col-md-2{
+	text-align: center;
+	height:800px;
+    border-right:1px solid #000;
+	padding: 0;
+	background:#393D49;
+	
+}
+.content .left ul{
+	/*transform: translate(-50%,-50%);
+	position: absolute;
+	left:50%;
+	top:50%;*/
+}
+.content .col-md-2 ul li{
+	height:30px;
+	line-height: 30px;
+	border-bottom:1px solid #000 ;
+	
+}
+.content .newxi{
+	padding:8px 0;
+    margin-top:100px ;
+    margin-left:100px ;
+	/*left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);*/
+}
+.content .newxi>div{
+	padding:6px 0;
+/*	height:40px;*/
+}
+.content .newxi>div>span,input{
+	height:40px;
+}
+.content .newxi>div>input{
+	border: none;
+	outline: none;
+	border: 1px solid #DCDCDC;
+	border-radius:6px ;
+}
+.content .btnsave{
+	 text-align: center;
+}
+.content .btnsave>input{
+	width:120px;
+	height:40px;
+	background:#079E95;
+	outline:none;
+	color:#fff;
+	border-radius:6px;
+	
+}
+ .content .user table td,th,caption{
+ 	text-align: center;
+ }
+ .content .user table caption{
+ 	font-size:18px;
+ 	font-weight: bolder;
+ 	color: #2AABD2;
+ }
+.footer{
+	height:50px;
+	background:#EEEEEE;
+	text-align: center;
+	line-height: 50px;
+	color: #000;
+	position: fixed;
+	bottom:0;
+	width:100%;
+}
+.huolist{
+	height:500px;
+	overflow-y:auto ;
+	overflow-x:auto;
+}
+.huolist table>thead{
+	border-radius:4px ;
+}
+.addproducts{
+	height:50px;
+	border-bottom:1px solid #C0C0C0;
+	font-family: "微软雅黑";
+}
+.addproducts a{
+	height:40px;
+	width:80px;
+	font-weight:bolder;
+	margin-top:5px;
+	text-align: center;
+	background:#19a97b;
+	display: block;
+	float:right;
+	color: #dce8e5;
+	line-height: 40px;
+	border-radius:4px ;
+	text-decoration: none;
+};
+.content .user #addlist>div{
+	height:30px;
+	margin-top:10px;
+}
+.table .delete tr td a{
+	font-size:16px;
+	text-decoration: none;
+}
+#huo .container-fluid{
+	padding: 0;
+}
+#huo .accordion-group{
+	padding: 12px 0;
+	border-bottom:1px solid #DCDCDC ;
+	
+}
+#huo .accordion-group .accordion-inner{
+	padding-top: 8px;
+}
+#huo .accordion-group:hover{
+    background:#EEEEEE;
+    box-shadow: 2px 3px #000;
+    border-radius:4px ;
+}
+#huo .accordion-group .accordion-inner>a{
+	font-size:13px ;
+}
+#huo .accordion-group .accordion-inner>a:hover{
+	color: #C92100;
+}
+#huo .accordion-group .accordion-heading>a{
+	font-size:16px ;
+}
+#huo .accordion-group .accordion-heading>a:hover{
+	color: #C92100;
+}
+/*.active{
+	background: red;
+	height: 30px;
+	width: 30px;
+	color: #fff;
+	display: block;
+	padding: 4px;
+	text-align: center;
+	border:1px solid lightgray ;
+}*/
+.search{
+/*	style="height:50px;width:100%;padding:20px 0;"*/
+    height:50px;
+    width:100%;
+    margin-top:20px;
+    margin-left:30%;
+}
+.search >select{
+	 height:40px;
+	 width:100px;
+	 text-align: center;
+	 display: inline-block;
+	 border:none;
+	 outline:none;
+     border:1px solid #9D9D9D;
+     border-radius:30px;
+};
+.search >select>option:nth-child(1){
+	 text-align: center;
+	 border-radius:6px;
+	 border-radius:30px;
+}
+.search >input{
+	display: inline-block;
+	border: none;
+	border-radius:30px;
+	border:1px solid #9D9D9D;
+	height:40px;
+	width:400px;
+	outline:none;
+}
+table>tfoot>tr>td>span{
+	display: inline-block;
+	margin-top:4px;
+	padding: 5px 16px;
+	background:#D0E9C6;
+	margin-right:1px;
+	border: 1px solid #ADADAD;
+	border-radius:22px;
+	cursor:pointer;
+}
+.table>tfoot>tr>td>span:hover{
+	 background:#47A8A3;
+}
+.table>tfoot>tr>td>span:nth-child(1){
+	background:#FF4747;
+	color:#fff;
+}
+.table>thead>tr{
+	background:#4CE9C6;
+}
+.content .changeproducts>.col-md-12>input{
+	border: none;
+	border: 1px solid #DDDDDD;
+	border-radius:4px;
+	outline:none;
+	color: #316263;;
+}
+.content .changeproducts .btnsave{
+	height:40px;
+	margin-top:14px;
+	margin-left:8.5% ;
+	background:#A3CEC6;
+	font-weight: bolder;
+}
+.content .changeproducts>.col-md-12>span{
+	padding: 0;
+}

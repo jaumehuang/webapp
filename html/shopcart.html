@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximun-scale= 1.0, minimun-scale= 1.0, user-scalable=0">
+		<title>购物车</title>
+	    <link rel="stylesheet" href="../libs/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+	    <link rel="stylesheet" href="../libs/font-awesome/css/font-awesome.min.css" />
+	    <link rel="stylesheet" href="../libs/css/index.min.css" />
+	    <!--<link rel="stylesheet" href="../libs/commonjs/commom.css" />-->
+	    <link rel="stylesheet" href="../libs/jquery-confirm/jquery-confirm.css" />
+	    <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.min.js" ></script>
+	    <!--<script type="text/javascript" src="../libs/ pluggable/jquery.lazyload.min.js" ></script>-->
+	    <!-- <script type="text/javascript" src="../libs/js/Getdata.js" ></script>-->
+	    <script type="text/javascript" src="../libs/page_turning/page_turning.js" ></script>
+	    <script type="text/javascript" src="../libs/js/right_nav.js" ></script>
+	    <script type="text/javascript" src="../libs/jquery-confirm/jquery-confirm.js" ></script>
+	    <script type="text/javascript" src="../libs/angularjs/angular.min.js" ></script>
+	    <script type="text/javascript" src="../libs/commonjs/commoncart.js" ></script>
+	    <script type="text/javascript" src="../libs/js/shopcar.js"></script>
+	    <script type="text/javascript" src="../libs/js/payment.js"></script>
+	      <script type="text/javascript" src="../libs/js/hometop.js" ></script>
+	</head>
+	<body ng-app="myApp" ng-controller="mycart">
+		<div class="header">
+			<div class="search-bar">
+				<a href="products.html" class="fa fa-angle-left home"></a>
+				<div>购物车</div>
+				<a href="#" class="fa fa-list-ul "></a>
+			</div>
+		</div>
+		<div class="category_right">
+			<em></em>
+			<div class="shape"></div>
+			<ul class="list-group">
+			    <li class="list-group-item "><a href="../index.html">首页</a></li>
+			    <li class="list-group-item"><a href="../index.html">分类查询</a></li>
+			    <li class="list-group-item"><a href="shopcart.html"> 购物车</a> </li>
+			    <li class="list-group-item"><a href="Members.html">会员中心</a></li>
+           </ul>
+		</div>
+		<div class="layout_body body_3" style="z-index: 1000px;">
+			<div class="list" ng-repeat="n in cartgood">
+				<div class="item-option option" indexid="{{n.id}}">
+					<i ng-if="!m.selected" class="fa fa-circle-o ng-scope"></i>
+				</div>
+				<div class="product-img img" ><img ng-src="{{n.img}}" /></div>
+				<div class="item-content content">
+					<div class="title" ng-bind='n.title'></div>
+				    <div class="item-controller">
+				    	<div class="product-price price ng-binding" >￥<span ng-bind="n.price" ></span></div>
+				        <div class="item-trash bussiness" ng-click="deletebtn($event)" indexid="{{n.id}}"><i class="fa fa-trash-o"></i></div>
+				        <div class="item-calc calc ">
+                            <div class="col-xs-4 disabled " ng-click="reducebtn($event)" indexid="{{n.id}}"><i class="fa fa-minus"></i></div>
+                            <div class="col-xs-4 ng-binding " ng-bind="n.numbers">1</div>
+                            <div class="col-xs-4 add" ng-click="addbtn($event)"indexid="{{n.id}}" ><i class="fa fa-plus"></i></div>
+                        </div>
+				    </div>
+				</div>
+			</div>
+			
+		</div>
+    <!--购买-->
+   <div class="buy" style="display: none;">
+   	  <form class="buyui">
+   	  	<div>
+   	  		<input type="radio" name="jaume"/><span>QQ钱包</span>
+   	  	</div>
+   	  	<div>
+   	  		<input type="radio" name="jaume"/><span>微信</span>
+   	  	</div>
+   	  	<div>
+   	  		<input type="radio" name="jaume"/><span>支付宝</span>
+   	  	</div>
+   	  	<div>
+   	  		<input type="radio" name="jaume"/><span>银行支付</span>
+   	  	</div>
+   	  	<span class="get">
+   	  		<input type="button" value="支付方式确认" />
+   	  	</span>
+   	  </form>
+   	  
+   </div>
+    <!--支付-->
+    <div class="moneyvip" style="display:none;">
+    	<form class="cow container">
+    		<span class="col-xs-12">商城大优惠,下单有惊喜哦！</span>
+    		<input class="col-xs-12 password" type="password" placeholder="请输入密码"/>
+    		<input class="col-xs-12 btnbuy" type="button" value="确认支付" ng-click="buy()"/>
+    	</form>
+      </div>
+      <div class="cover cow container">
+    	<div class="col-xs-12 changebuy">
+		 	<div class="col-xs-12">余额支付</div>
+		 	<div class="col-xs-12">微信支付</div>
+		 </div>
+	   </div>
+	    <div class="cover2">
+	    </div
+	    <div class="scroll_top">
+			<i class=" fa fa-arrow-up" ></i>
+		</div>
+		<!--layout_footer-->
+		<div class="layout_footer3"">
+		    <div class="shoppingcar-toolbar cart">
+	        <div class="col-xs-3"><i class="fa fa-circle-o ng-scope"></i>
+	        	  <span>全选</span></div> 
+	        <div class="col-xs-4 pay"><span >支付方式</span><i class="clip-chevron-right"></i></div>
+	        <div class="col-xs-5"><a href="javascript:"class="ng-binding" style="text-decoration: none;" ng-click="getOrder()">确认并支付(<span>0</span>)</a></div>
+	        </div>
+		</div>
+	</body>
+</html>

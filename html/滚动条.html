@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style type="text/css">
+		</style>
+		<script>
+			var ary = [{bb:"aaa"}, {bb:"露露"}, {bb:"bbb"},{bb:"aaa"}, {bb:"ccc"}, {bb:"ccc"}, {bb:"aaa"}, {bb:"露露"}, {bb:"haha"}, {bb:"wqwq"}, {bb:"23232"},{bb:"d334"}];
+			var res = [];
+			console.log(ary)
+			ary.sort();
+			
+			for(var i = 0; i < ary.length;) {
+				var count = 0;
+				for(var j = i; j < ary.length; j++) {
+
+					if(ary[i].bb == ary[j].bb){
+						console.log("123")
+						count++;
+					}
+				}
+				res.push(ary[i]);
+				i += count;
+                console.log(i)
+			}
+//			//res 二维数维中保存了 值和值的重复数  
+//			for(var i = 0; i < res.length; i++) {
+//				console.log(res[i]);
+//			}
+			console.log(res);
+		</script>
+		</style>
+	</head>
+	<body>
+		<div>
+
+		</div>
+	</body>
+
+</html>

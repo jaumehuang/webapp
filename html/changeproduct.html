@@ -1,0 +1,49 @@
+<form class="changeproducts" style="margin-left:250px;margin-top:20px ;"ng-controller="addproducts">
+   	<h3 class="col-md-12" style="text-indent: 122px;">修改商品信息表单</h3>
+	<div class="col-md-12" style="height:40px;margin-top:10px;">
+	 <span class="col-md-1">商品编号:</span><input type="text" class="col-md-4" ng-model="id" placeholder="请输入商品编号" />
+	</div>
+	<div class="col-md-12" style="height:40px;margin-top:10px;">
+	 <span class="col-md-1">商品图片:</span><input type="text" class="col-md-4" ng-model="img" placeholder="请上传商品图片"/>
+	</div>
+	<div class="col-md-12" style="height:40px;margin-top:10px;">
+	 <span class="col-md-1">商品主题:</span><input type="text" class="col-md-4" ng-model="title" placeholder="请输入商品主题"/>
+	</div>
+	<div class="col-md-12" style="height:40px;margin-top:10px;">
+	 <span class="col-md-1">商品数量:</span><input type="text" class="col-md-4" ng-model="numbers" placeholder="请输入商品数量"/>
+	</div>
+	<div class="col-md-12" style="height:40px;margin-top:10px;">
+	 <span class="col-md-1">商品价格:</span><input type="text" class="col-md-4" ng-model="price" placeholder="请输入商品价格"/>
+	</div>
+	<div class="col-md-12" ng-click="changebtn()">
+	      <input type="button" value="保存" class="col-md-4 btnsave "/>
+	</div>
+	<script type="text/javascript">
+		myApp.register.controller("addproducts",["$scope","$http","$compile",function($scope,$http,$compile){
+		    $http.post(common.baseUrl+"seleteproducts.php",{id:$id}).success(function(_reponse){
+		         $scope.id=_reponse[0].id;
+		         $scope.img=_reponse[0].img;
+		         $scope.title=_reponse[0].title;
+		         $scope.price=_reponse[0].price;
+		         $scope.numbers=_reponse[0].numbers;
+		    });
+			$scope.changebtn=function(){
+				$http.post(common.baseUrl+"changeproducts.php",{oldid:$id,img:$scope.img,title:$scope.title,price:$scope.price,numbers:$scope.numbers}).success(function(_reponse){
+					//判断是否输入为空;
+					if($scope.img!=undefined||$scope.title!=undefined||$scope.price!=undefined||$scope.numbers!=undefined){
+					if(_reponse.state){
+						$.alert(_reponse.message)
+						$http.get("huoproductslist.html").success(function(_response){
+						 $compile($('.user').html(_response))($scope);
+					   });
+					}else if(!_reponse.state){
+						alert(_reponse.message)
+					}
+				   }else{
+				   	   alert("表单不能为空");
+				   }
+				})
+			}
+        }]);	  
+	</script>
+</form>

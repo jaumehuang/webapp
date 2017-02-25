@@ -1,0 +1,19 @@
+﻿{
+	"index": {"cn": "商品ID", "en": "index"},
+	"store":{"cn":"店铺","en":"store"},
+	"img":{"cn":"商品图片","en":"img"},
+	"id": {"cn": "商品编号", "en": "ID"},
+	"title": {"cn": "商品主题", "en": "title"},
+	"price": {"cn": "商品价格", "en": "price"},
+	"numbers":{"cn":"商品数量","en":"Numbers"},
+	"express":{"cn":"运送方式","en":"express"},
+	"invoices":{"cn":"发票抬头","en":"invoices"},
+	"Order_number":{"cn":"订单号","en":"Order_number"},
+	"buyer_words":{"cn":"买家留言","en":"buyer_words"},
+	"payment":{"cn":"支付方式","en":"payment"},
+	"integral":{"cn":"使用积分","en":"integral"},
+	"buyer":{"cn":"买家名称","en":"buyer"},
+	"phone":{"cn":"联系电话","en":"phone"},
+	"address":{"cn":"收件地址","en":"Address"},
+	"time":{"cn":"订单时间","en":"price"}
+}
